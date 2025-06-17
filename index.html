@@ -118,6 +118,75 @@
       color: #fff;
       font-family: 'Merriweather', serif;
     }
+    iframe.video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      display: block;
+    }
+    .materias iframe.video {
+      display: none;
+    }
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 999;}
+      .portada, .materias {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .portada.active, .materias.active {
+      display: flex;
+    }
+    .portada h1 {
+      font-size: 4em;
+      font-family: 'Merriweather', serif;
+      color: #f9c5d1;
+      margin-bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .portada h2 {
+      font-size: 4em;
+      font-family: 'Merriweather', serif;
+      color: #f9c5d1;
+      margin-bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .portada p {
+      font-size: 1.2em;
+      margin: 5px 0;
+      color: #d0f0fd;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .portada button, .materias button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      background: #a0e7e5;
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Merriweather', serif;
+    }
+    .portada button:hover, .materias button:hover {
+      background: #b4f8c8;
+    }
   </style>
 </head>
 <body>
@@ -131,6 +200,8 @@
 <p>QUEZADA CABRERA MANUEL ALEJANDRO</p> <p>RIVERA CAMARGO ALONDRA</p>
   <button onclick="mostrarMaterias()">Entrar al proyecto</button>
   <button onclick="mostrarFormularioDesdePortada()">Entrar al formulario</button>
+   <iframe class="video" id="videoPortada" src="https://youtu.be/PQA_n_e_PgM?si=Fa7qKLk0FU3BuiT0" title="YouTube video" allowfullscreen allow="autoplay"></iframe>
+  
 </div>
 
 <!-- MATERIAS -->
