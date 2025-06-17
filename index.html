@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto Aula</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      background-color: #000;
+      color: #f0f0f0;
+    }
+    .portada, .materias, .formulario {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .active {
+      display: flex;
+    }
+    h1 {
+      font-size: 3.5em;
+      color: #f9c5d1;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 2em;
+      color: #b4f8c8;
+      margin-top: 0;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 20px;
+      background: #a0e7e5;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Merriweather', serif;
+    }
+    .materias {
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 15px;
+      justify-content: center;
+    }
+    .materia {
+      width: 220px;
+      height: 270px;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .materia:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #f9c5d1;
+      text-align: center;
+    }
+    .flip-card-front img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+      font-size: 0.9em;
+    }
+    .flip-card-back a {
+      color: #a0e7e5;
+      text-decoration: none;
+      margin-top: 8px;
+      display: inline-block;
+    }
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 999;
+    }
+    form {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      color: #fff;
+    }
+    input, textarea, select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #000;
+      color: #fff;
+      font-family: 'Merriweather', serif;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="portada active" id="portada">
+  <h1>PROYECTO AULA</h1>
+  <h2>Medio ambiente sano</h2>
+  <p><strong>Profesor:</strong> DAVID AGUSTÍN BARAJAS GUTIÉRREZ</p>
+  <p><strong>Equipo:</strong> CRUZ ROSAS JIMENA DAYAMI </p> <p> DELGADO MARTINEZ EMMANUEL</p> <p>GUTIERREZ ROSAS ALDO </p>
+<p>QUEZADA CABRERA MANUEL ALEJANDRO</p> <p>RIVERA CAMARGO ALONDRA</p>
+  <button onclick="mostrarMaterias()">Entrar al proyecto</button>
+  <button onclick="mostrarFormularioDesdePortada()">Entrar al formulario</button>
+</div>
+
+<!-- MATERIAS -->
+<div class="materias" id="materias">
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Trigonometría">
+        <h3>Trigonometría y Geometría</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Realizamos estadísticas sobre el crecimiento poblacional usando funciones exponenciales.</p>
+        <a href="https://drive.google.com/file/d/1UQdcXtwJj8JE4MQ5glABeXDJuDwyeVep/view?usp=sharing" download>📥 Descargar Estadisticas</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/1154/1154434.png" alt="Filosofía">
+        <h3>Filosofía</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Hicimos una presentación sobre vida saludable.</p>
+        <a href="https://drive.google.com/file/d/15eBgOZRYiqZvdvF-JlCjEAbBhFjZ_cL4/view?usp=sharing" download>📥 Descargar Presentacion</a>
+    
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Computación">
+        <h3>Computación Básica</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Realizamos esta página web juntando los trabajos de todas las materias.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/3534/3534033.png" alt="Expresión Oral">
+        <h3>Expresión Oral y Escrita II</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Escribimos el cuento “El último huevo”.</p>
+        <a href="https://drive.google.com/file/d/1byPhn2LTl5cWExs2_2n7mclf-7NfmAyW/view?usp=sharing" download>📥 Descargar cuento</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/2907/2907993.png" alt="Biología">
+        <h3>Biología Básica</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Hicimos un diario con acciones ecológicas.</p>
+        <a href="https://drive.google.com/file/d/1jQPjkPcX5RpUg0rFvzWsWmUr-IBrV1QX/view?usp=sharing" download>📥 Descargar infografía</a>
+    
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/252/252025.png" alt="Historia">
+        <h3>Historia de México Contemporáneo II</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Infografía sobre la sobrepoblación desde el sexenio de Miguel de la Madrid hasta Ernesto Zedillo.</p>
+        <a href="https://drive.google.com/file/d/1NAw4eiq7LqZ3g2Zmd6XZGmDglxgiK3T8/view?usp=sharing" download>📥 Descargar infografía</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png" alt="Orientación">
+        <h3>Orientación Juvenil y Profesional II</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Infografía sobre 10 acciones para cuidar el medio ambiente.</p>
+        <a href="https://drive.google.com/file/d/1DvHpHaBpKvmgyAzkdnX00xDy4FJsidrz/view?usp=sharing" download>📥 Descargar infografía</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/2166/2166821.png" alt="Técnicas">
+        <h3>Técnicas de Investigación de Campo</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Realizamos una infografía sobre aerogeneradores eólicos Savonius.</p>
+        <a href="https://drive.google.com/file/d/17bPySmQpNyvb8P73JMDc_ZO9Np1tH3q7/view?usp=sharing" download>📥 Descargar trabajo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="materia">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="Inglés">
+        <h3>Inglés</h3>
+      </div>
+      <div class="flip-card-back">
+        <p>Video de rutinas para mejorar el medio ambiente.</p>
+        <a href="https://drive.google.com/file/d/1-sqhW_2oEnWP9W6xx_clkm5gYz92Np66/view?usp=sharingf" download>📥 Descargar el video</a>
+      
+      </div>
+    </div>
+  </div>
+
+  <button onclick="volverPortada()">Volver a la portada</button>
+  <button onclick="mostrarFormulario()">Ir a formulario</button>
+</div>
+
+<!-- FORMULARIO -->
+<div class="formulario" id="formulario">
+  <h2>Encuesta del Proyecto Aula</h2>
+  <form action="https://formspree.io/f/mwkjnzya" method="POST">
+    <input type="text" name="nombre" placeholder="Tu nombre" required />
+    <input type="email" name="email" placeholder="Tu correo electrónico" required />
+    <select name="materia" required>
+      <option value="">Materia que más te gustó</option>
+      <option>Trigonometría</option>
+      <option>Filosofía</option>
+      <option>Computación</option>
+      <option>Expresión Oral</option>
+      <option>Biología</option>
+      <option>Historia</option>
+      <option>OJP</option>
+      <option>Técnicas</option>
+      <option>Inglés</option>
+    </select>
+    <textarea name="comentarios" rows="4" placeholder="Comentarios sobre el proyecto..." required></textarea>
+    <button type="submit">Enviar respuestas</button>
+  </form>
+  <button onclick="volverPortada()">Volver a la portada</button>
+  <button onclick="volverProyecto()">Volver al proyecto</button>
+</div>
+
+<!-- AUDIO -->
+<audio controls autoplay loop>
+  <source src="https://media.vocaroo.com/mp3/192MbRnwAJ99" type="audio/mp3">
+</audio>
+
+<script>
+  function mostrarMaterias() {
+    document.getElementById("portada").classList.remove("active");
+    document.getElementById("materias").classList.add("active");
+  }
+
+  function volverPortada() {
+    document.getElementById("portada").classList.add("active");
+    document.getElementById("materias").classList.remove("active");
+    document.getElementById("formulario").classList.remove("active");
+  }
+
+  function mostrarFormulario() {
+    document.getElementById("materias").classList.remove("active");
+    document.getElementById("formulario").classList.add("active");
+  }
+
+  function mostrarFormularioDesdePortada() {
+    document.getElementById("portada").classList.remove("active");
+    document.getElementById("formulario").classList.add("active");
+  }
+
+  // NUEVA FUNCIÓN
+  function volverProyecto() {
+    document.getElementById("formulario").classList.remove("active");
+    document.getElementById("materias").classList.add("active");
+  }
+</script>
+
+
+</body>
+</html>
